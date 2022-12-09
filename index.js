@@ -33,7 +33,7 @@ const run = async () => {
     app.get("/blog/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
-      const blog = await blogsCollection.findOne(query);
+      const blog = await blogCollection.findOne(query);
       res.send({ status: true, data: blog });
     });
 
